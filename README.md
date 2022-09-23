@@ -42,8 +42,25 @@ list apps 'installed' in mounted windows image
 ## 4_remove_apps_10.ps1
 read and modify to suit your needs.
 
-## 5_add_drivers.ps1
-see [drivers README.md](./drivers/README.md)
+## 5_add_drivers_and_updates.ps1
+### injecting drivers into an offline image
+[heres the refence doc for powershell](https://docs.microsoft.com/en-us/powershell/module/dism/add-windowsdriver?view=windowsserver2022-ps).
+
+the neat part of this is that most manufacturers have driver packs design for this:
+
+> [Dell Command | Deploy Driver Packs for Enterprise Client OS Deployment](https://www.dell.com/support/kbdoc/en-us/000124139/dell-command-deploy-driver-packs-for-enterprise-client-os-deployment?lang=en)
+
+place the contents of a suitable archive in the configured driver location.
+
+delete drivers not relevant to you for a smaller final image, look at what they give you, should be easy to update/replace.
+
+
+### adding updates
+Get latest (sort by date) 	'Cumulative Update for Windows' from Microsoft Update Catalog for your version:
+* w10: [Microsoft Update Catalog - Search results for "Cumulative Update for Windows 10"](https://www.catalog.update.microsoft.com/Search.aspx?q=Cumulative%20Update%20for%20Windows%2010)
+* w11: [Microsoft Update Catalog - Search results for "Cumulative Update for Windows 11"](https://www.catalog.update.microsoft.com/Search.aspx?q=Cumulative%20Update%20for%20Windows%2011)
+
+place 
 
 ## 6_create_iso.ps1
 finalize and create bootable media

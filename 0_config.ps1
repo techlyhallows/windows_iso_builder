@@ -1,9 +1,22 @@
-# SET THESE:
-$TEMP_PATH = "C:\TMP\"
-$ISO_PATH = "C:\TMP\Windows.iso"
+# SET THE PATH_NAMEs AND ISO PATH:
+$WORK_PATH = "C:\"
+
+$TEMP_PATH_NAME = "TMP"
+$TEMP_PATH = "${WORK_PATH}${TEMP_PATH_NAME}\"
+$ISO_PATH = "${WORK_PATH}${TEMP_PATH_NAME}\Windows.iso"
+$WIM_PATH = "${WORK_PATH}${TEMP_PATH_NAME}\install_uncompressed.wim"
+$UPDATES_PATH_NAME = "UPDATES"
+$UPDATES_PATH = "${TEMP_PATH}${UPDATES_PATH_NAME}\"
+
 
 # mount path for windows image
-$MOUNT_PATH = "C:\MOUNT\"
+$MOUNT_PATH_NAME = "MOUNT"
+$MOUNT_PATH = "${WORK_PATH}${MOUNT_PATH_NAME}\"
 
 # Final iso contents
-$ISO_BUILD_DIR = "C:\ISO\"
+$ISO_PATH_NAME = "ISO"
+$ISO_BUILD_DIR = "${WORK_PATH}${ISO_PATH_NAME}\"
+
+# Drivers path; C:\DRIVERS is default for dell/lenovo driver packs
+$DRIVER_PATH_NAME = "DRIVERS"
+$DRIVER_DIR = "${WORK_PATH}${DRIVER_PATH_NAME}\"
